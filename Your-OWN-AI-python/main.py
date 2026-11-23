@@ -27,7 +27,7 @@ from urllib.parse import parse_qs, urlparse
 sys.setrecursionlimit(10000)  # KD-Tree recursion on skewed insert orders
 
 DIMS = 16  # demo vectors; doc embedding size comes from Ollama at runtime
-PORT = 8080
+PORT = int(os.environ.get("PORT", 8080))
 HERE = os.path.dirname(os.path.abspath(__file__))
 
 Vec = List[float]
